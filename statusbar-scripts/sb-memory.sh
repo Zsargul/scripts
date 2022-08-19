@@ -1,6 +1,7 @@
 #/bin/sh
 
-case $BUTTON in
+# Click action
+case $BLOCK_BUTTON in
 	1) setsid -f "$TERMINAL" -e htop ;;
 esac
 

@@ -1,9 +1,15 @@
 #/bin/sh
 
-calendarIcon="🗓"
+# Click action
+case $BLOCK_BUTTON in
+	# 1) Open calendar
+	2) "$TERMINAL" -e "$EDITOR" "$0" ;; 
+esac
 
+calendarIcon="🗓"
 hour=$(date '+%I')
 
+# Set time icon
 case $hour in
 	"00") hourIcon="🕛" ;;
 	"01") hourIcon="🕐" ;;
@@ -20,6 +26,7 @@ case $hour in
 	"12") hourIcon="🕛" ;;
 esac
 
+# Set suffix
 case 'date +%d' in
 	"1"|"21"|"31") suffix="st" ;;
 	"2"|"22") suffix="nd" ;;
