@@ -8,7 +8,8 @@
 # 📡 Wifi/Eth Enabled
 
 case $BLOCK_BUTTON in
-	1) setsid -f "$TERMINAL" -e nmtui ;;
+	1) nm-connection-editor ;;
+	2) setsid -f "$TERMINAL" -e nmtui ;;
 esac
 
 # Get wired or wireless connection
