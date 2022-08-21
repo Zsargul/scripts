@@ -25,15 +25,14 @@ else
 	# Connection is wired
 	if [[ $connection == *"Wired"* ]] ; then
 			conType="ETH"
-			print "%s\n" "$conType"
+			printf "%s\n" "$icon$conType"
 	else # Connection is not wired
-			if grep -q wifi $(nmcli | awk 'NR==3{print}') ; else
+			if grep -q wifi $(nmcli | awk 'NR==3{print}') ; then
 				conType="Wi-Fi"
 			else
 				conType="?"
 			fi
 
 			printf "%s\n" "$contype: $connection"
-			;;
 	fi
 fi
