@@ -1,6 +1,6 @@
 #/bin/sh
 
-icon="📡"
+icon="📟"
 
 case $BLOCK_BUTTON in
 	# None	
@@ -13,13 +13,13 @@ else
 	# can get them from there
 	windowname=$(xdotool search --name Telegram getwindowname)
 
-	# Get number of notifs
-	if [[ $windowname != "Telegram" ]] ; then
+	# Telegram window has notification suffix
+	if [[ $windowname == *"Telegram"* ]] && [[ $windowname == *"("* ]] ; then 
 		noti=${windowname#*(}
 		noti=${noti%)*}
 	
 		printf "%s\n" "$icon[$noti]"
-	else # If there are no notifications, do nothing
+	elif [[ $windowname == "Telegram" ]] ; then # If there are no notifications, do nothing
 		printf "%s\n" "$icon"
 	fi
 fi
