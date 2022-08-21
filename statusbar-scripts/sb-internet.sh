@@ -1,8 +1,11 @@
 #/bin/sh
 
+# Script for determining status of internet connection. Current method uses output
+# from nmcli and is a bit hacky. A more elegant method of achieving this scripts goal
+# should be devised.
+
 # ❌ Wifi/Eth disabled
 # 📡 Wifi/Eth Enabled
-
 
 case $BLOCK_BUTTON in
 	1) setsid -f "$TERMINAL" -e nmtui ;;
