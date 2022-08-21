@@ -11,9 +11,10 @@ esac
 # Get wired or wireless connection
 output=$(nmcli | awk 'NR==1{print}')
 
+# No connection
 if [[ $output != *"connected"* ]] ; then
 	icon="❌"
-	conType="N/A"
+	conType="Offline"
 
 	printf "%s\n" "$icon$conType"
 	exit
@@ -21,14 +22,18 @@ else
 	connection=${output#*to }
 	icon="📡"
 
-	case $connection in
-		"Wired"* )
+	# Connection is wired
+	if [[ $connection == *"Wired"* ]] ; then
 			conType="ETH"
-			;;
-		*)
-			conType=$connection
-			;;
-	esac
+			print "%s\n" "$conType"
+	else # Connection is not wired
+			if grep -q wifi $(nmcli | awk 'NR==3{print}') ; else
+				conType="Wi-Fi"
+			else
+				conType="?"
+			fi
 
-	printf "%s\n" "$icon$conType"
+			printf "%s\n" "$contype: $connection"
+			;;
+	fi
 fi
