@@ -22,7 +22,7 @@ do
 		# "$HOME/games") icon="🕹" ;;
 	esac
 
-	printf "%s:%s" "$icon" "$(df -h "$location" | awk ' /[0-9]/ {print $5}')"
+	printf "%s%s" "$icon" "$(df -h "$location" | awk ' /[0-9]/ {print $5}')"
 
 	# Don't print space after last directory
 	if [[ $location == $last ]] ; then
