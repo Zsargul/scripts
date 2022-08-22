@@ -5,7 +5,7 @@
 
 # Click Action
 case $BLOCK_BUTTON in
-	1) setsid -f "$TERMINAL" -e pulsemixer ;;
+	1) "$TERMINAL" -e pulsemixer; kill -44 $(pidof dwmblocks) ;;
 esac
 
 # Muted
