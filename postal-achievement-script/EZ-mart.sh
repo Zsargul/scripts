@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# To use, load into the "EZ Mart" level from the
+# level selection and then just run this script.
+
 # Get the Postal game window and make sure it's focused 
 window=$(xdotool search --name Postal)
 active=$(xdotool getactivewindow getwindowname)
@@ -36,7 +39,9 @@ while true ; do
 	done
 	xdotool keyup Up # Stop shooting Up
 
-	# Move further up level
+	# Move further up level (This is where you start getting
+	# shot at more so the "Holes is holes" achievement comes
+	# into play)
 	echo "Shooting [LEFT]"; xdotool keydown Left # Start shooting
 	echo "Walking [LEFT]"; xdotool keydown a
 	xdotool sleep 0.2
