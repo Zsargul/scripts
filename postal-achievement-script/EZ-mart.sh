@@ -9,7 +9,7 @@ window=$(xdotool search --name Postal)
 args="--clearmodifiers --window $window"
 
 while true ; do
-	for i in {1..1} ; do
+	for i in {1..10} ; do
 		xdotool key $args Return; echo "Starting run $i"
 		xdotool sleep 1
 
@@ -59,7 +59,7 @@ while true ; do
 		# he dies during this point, the script may stall for a short time
 		# as it carries out the remaining instructions with the assumption
 		# that Postal dude is alive, before restarting as usual
-		for i in {0..3} ; do
+		for i in {1..3} ; do
 			xdotool keydown $args Left # Start shooting Up
 			xdotool keydown $args d
 			xdotool sleep 6
