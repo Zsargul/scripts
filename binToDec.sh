@@ -1,4 +1,4 @@
-#/usr/bin/bash
+#!/bin/bash
 
 if [ $# -eq 0 ] ; then
 	echo 'Please provide a binary number as argument. Example: ./binToDec.sh 1001010'
