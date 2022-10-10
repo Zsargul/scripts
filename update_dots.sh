@@ -12,6 +12,7 @@ declare -a DF_PATHS=(
 	#"$HOME/.xinitrc"
 	#"$HOME/.config/qutebrowser/config.py"
 	#"/etc/X11/xorg.conf"
+	#"/etc/vimrc"
 
 	"$HOME/.testfile1"
 	"$HOME/.testfile2"

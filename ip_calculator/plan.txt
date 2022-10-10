@@ -1,0 +1,9 @@
+./ipinfo [some ip address in decimal form + optional /N notation for subnet] [some optional mask] ==> following info:
+- network ip belongs to (if mask given)
+- class of address
+- broadcast address (if mask given)
+- first ip address (if mask given)
+- last ip address (if ip address given)
+- intermediary address range (if ip address given)
+
+if \N notation AND full subnet is provided check if they match to avoid errors
