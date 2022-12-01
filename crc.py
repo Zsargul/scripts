@@ -1,4 +1,15 @@
-crc(data: str, generator: str):
+def main():
+    print(f"Input M (Frame contents without appended 0's):")
+    m = input()
+
+    print(f"Input G (Generator):")
+    g = input()
+
+    calc_crc(m, g)
+    print("-----------------")
+    verify_crc(m, g)
+
+def calc_crc(data: str, generator: str):
     print(f"M: {data}")
 
     n = len(generator) - 1
@@ -73,3 +84,5 @@ def binary_divide_step(dividend: str, divisor: str, length: int):
 
     return dividend
 
+
+main()
