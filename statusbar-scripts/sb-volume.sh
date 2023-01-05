@@ -1,11 +1,12 @@
 #/bin/sh
 
-# Script for displaying volume using pamixer. Requires pamixer, pulseaudio 
-# and optionally pulsemixer for the click action.
+# Script for displaying volume using pamixer. Requires pamixer, pulseaudio/pipewire-pulse
+# and optionally pulsemixer for the click action. 
 
 # Click Action
 case $BLOCK_BUTTON in
 	1) "$TERMINAL" -e pulsemixer; kill -44 $(pidof dwmblocks) ;;
+	2) "$TERMINAL" -e "$EDITOR" "$0" ;; 
 esac
 
 # Muted
