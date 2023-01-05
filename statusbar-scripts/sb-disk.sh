@@ -5,7 +5,7 @@ case $BLOCK_BUTTON in
 	# None
 esac
 
-declare -a DIRS=("/" "$HOME") # "$HOME/av" "$HOME/games" 
+declare -a DIRS=("/" "$HOME" "$HOME/av") # "$HOME/games" 
 
 # Get index of last element
 pos=$(( ${#DIRS[*]} - 1 ))
@@ -18,7 +18,7 @@ do
 	case "$location" in
 		"/") icon="🌲" ;;
 		"$HOME") icon="🏠" ;;
-		# "$HOME/av") icon="🎥" ;;
+		"$HOME/av") icon="🎬" ;;
 		# "$HOME/games") icon="🕹" ;;
 	esac
 
