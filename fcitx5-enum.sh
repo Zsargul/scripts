@@ -4,6 +4,9 @@
 # (ex. "keyboard-pl") must be included in the inputMethods array and can be found
 # in ~/.config/fcitx5/config
 
+# Note: Fcitx5 overrides custom Xmodmap settings. To turn this off, go into 
+# fcitx5-config -> addons -> XCB -> uncheck "Allow Overrriding System XKB Settings"
+
 inputMethods=("keyboard-pl" "keyboard-ru" "mozc")
 currentIM=$(fcitx5-remote -n)
 index=-1
