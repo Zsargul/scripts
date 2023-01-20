@@ -2,12 +2,13 @@
 
 # This script enumerates fcitx5 keyboard layouts. Documented names for the layouts
 # (ex. "keyboard-pl") must be included in the inputMethods array and can be found
-# in ~/.config/fcitx5/config
+# in ~/.config/fcitx5/config. If the array (and order) doesn't match the layouts
+# listed in fcitx5's config, the script won't work.
 
-# Note: Fcitx5 overrides custom Xmodmap settings. To turn this off, go into 
+# Note: Fcitx5 overrides custom Xmodmap settings. To turn this off, go into
 # fcitx5-config -> addons -> XCB -> uncheck "Allow Overrriding System XKB Settings"
 
-inputMethods=("keyboard-pl" "keyboard-ru" "mozc")
+inputMethods=("keyboard-gb" "keyboard-pl" "mozc" "keyboard-ru")
 currentIM=$(fcitx5-remote -n)
 index=-1
 
